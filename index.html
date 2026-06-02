@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ENDY EDESON Calculator - A modern, responsive calculator application">
+    <title>ENDY EDESON Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Loading Animation -->
+        <div class="loader" id="loader"></div>
+
+        <!-- Main Calculator -->
+        <div class="calculator-wrapper">
+            <!-- Header -->
+            <div class="header">
+                <h1 class="calculator-title">ENDY EDESON</h1>
+                <p class="calculator-subtitle">Calculator</p>
+            </div>
+
+            <div class="main-content">
+                <!-- Calculator Panel -->
+                <div class="calculator-panel">
+                    <!-- Display Screen -->
+                    <div class="display-container">
+                        <div class="previous-operand" id="previousOperand"></div>
+                        <div class="current-operand" id="currentOperand">0</div>
+                    </div>
+
+                    <!-- Button Controls -->
+                    <div class="controls">
+                        <button class="control-btn sound-toggle" id="soundToggle" title="Toggle Sound">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.26 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            </svg>
+                        </button>
+                        <button class="control-btn copy-btn" id="copyBtn" title="Copy Result">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                            </svg>
+                        </button>
+                        <button class="control-btn history-toggle" id="historyToggle" title="Show History">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Buttons Grid -->
+                    <div class="buttons-grid">
+                        <!-- Row 1 -->
+                        <button class="btn function-btn" data-action="clear">C</button>
+                        <button class="btn function-btn" data-action="delete">DEL</button>
+                        <button class="btn operator-btn" data-operator="%">%</button>
+                        <button class="btn operator-btn" data-operator="÷">÷</button>
+
+                        <!-- Row 2 -->
+                        <button class="btn number-btn" data-number="7">7</button>
+                        <button class="btn number-btn" data-number="8">8</button>
+                        <button class="btn number-btn" data-number="9">9</button>
+                        <button class="btn operator-btn" data-operator="×">×</button>
+
+                        <!-- Row 3 -->
+                        <button class="btn number-btn" data-number="4">4</button>
+                        <button class="btn number-btn" data-number="5">5</button>
+                        <button class="btn number-btn" data-number="6">6</button>
+                        <button class="btn operator-btn" data-operator="-">−</button>
+
+                        <!-- Row 4 -->
+                        <button class="btn number-btn" data-number="1">1</button>
+                        <button class="btn number-btn" data-number="2">2</button>
+                        <button class="btn number-btn" data-number="3">3</button>
+                        <button class="btn operator-btn" data-operator="+">+</button>
+
+                        <!-- Row 5 -->
+                        <button class="btn number-btn zero-btn" data-number="0">0</button>
+                        <button class="btn number-btn" data-number=".">.</button>
+                        <button class="btn equals-btn" data-action="equals">=</button>
+                    </div>
+                </div>
+
+                <!-- History Sidebar -->
+                <div class="history-sidebar" id="historySidebar">
+                    <div class="history-header">
+                        <h3>Calculation History</h3>
+                        <button class="clear-history-btn" id="clearHistoryBtn">Clear</button>
+                    </div>
+                    <div class="history-list" id="historyList">
+                        <p class="empty-message">No calculations yet</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p class="footer-text">© 2026 Developed by <span class="brand-name">ENDY EDESON</span></p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Audio for sound effects -->
+    <audio id="clickSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAA==" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
