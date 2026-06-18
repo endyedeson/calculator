@@ -129,6 +129,42 @@ Data persists across browser sessions until manually cleared.
 - **Edge**: ✅ Full support
 - **Mobile Browsers**: ✅ Full support
 
+## 📱 Build for Android
+
+Convert this web calculator into a native Android APK app with **automated build scripts**!
+
+### Automated Build (Easiest)
+
+**Option 1: Batch File (Windows)**
+```bash
+build-apk-automated.bat
+```
+
+**Option 2: PowerShell (Windows)**
+```powershell
+.\Build-APK-Auto.ps1              # Debug APK
+.\Build-APK-Auto.ps1 -Release     # Release APK (Google Play Store)
+```
+
+### Prerequisites
+- Node.js 14+ → [Download](https://nodejs.org/)
+- Android SDK → [Download Android Studio](https://developer.android.com/studio)
+- Java JDK 11+ → [Download](https://www.oracle.com/java/technologies/downloads/)
+
+### Quick Setup
+
+1. Set `ANDROID_HOME` environment variable to your Android SDK location
+2. Run: `build-apk-automated.bat` or `.\Build-APK-Auto.ps1`
+3. Wait 10-15 minutes for first build
+4. APK ready at: `platforms\android\app\build\outputs\apk\debug\app-debug.apk`
+
+### Detailed Guides
+- **Quick Reference**: See [QUICK_BUILD.md](QUICK_BUILD.md)
+- **Full Guide**: See [BUILD_AUTOMATION.md](BUILD_AUTOMATION.md)
+- **Android Build Details**: See [APK_QUICK_START.md](APK_QUICK_START.md)
+
+---
+
 ## 📱 Responsive Design
 
 The calculator is fully responsive and works seamlessly on:
@@ -136,6 +172,7 @@ The calculator is fully responsive and works seamlessly on:
 - Tablets (768px - 1024px)
 - Mobile phones (320px - 767px)
 - Orientation: Both portrait and landscape
+- **Android App** (via APK build)
 
 ## 🔒 Privacy & Security
 

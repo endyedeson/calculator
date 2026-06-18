@@ -1,0 +1,14 @@
+{
+  "name": "endy-edeson-calculator",
+  "version": "1.0.0",
+  "description": "ENDY EDESON Calculator - A modern, responsive calculator application",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "build:android": "cordova build android --release",
+    "build:android-debug": "cordova build android"
+  },
+  "keywords": ["calculator", "math", "app"],
+  "author": "ENDY EDESON",
+  "license": "MIT"
+}
