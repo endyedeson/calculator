@@ -8,15 +8,15 @@
 :root {
     --primary-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     --secondary-bg: #0f3460;
-    --display-bg: #0f3460;
+    --display-bg: #0b50a5;
     --button-bg: #e94560;
     --button-hover: #ff6b7a;
     --operator-bg: #16213e;
     --operator-hover: #1e4d7b;
     --function-bg: #6c757d;
     --function-hover: #81899f;
-    --equals-bg: #27ae60;
-    --equals-hover: #2ecc71;
+    --equals-bg: #889e09;
+    --equals-hover: #0c648d;
     --text-primary: #ffffff;
     --text-secondary: #b0b0b0;
     --border-radius: 12px;
@@ -698,4 +698,11 @@ body {
         box-shadow: none;
         border: 1px solid #ccc;
     }
+}
+
+.app-logo {
+    width: 200px;
+    height: 120px;
+    display: block;
+    margin: 0 auto;
 }
